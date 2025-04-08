@@ -15,7 +15,7 @@ const NavBar = () => {
             {user ? (
                 <ul>
                     <li><Link to='/'>Home</Link></li>
-                    <li>Create a Ticket</li>
+                    <li><Link to='/tickets/new'>Create a Ticket</Link></li>
                     <li><Link to='/tickets'>All Tickets</Link></li>
                     <li>My Requests</li>
                     {user.role === 'serviceDesk' ? (

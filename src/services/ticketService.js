@@ -12,18 +12,30 @@ const index = async () => {
 };
 
 const show = async (ticketId) => {
-    console.log("inside ticketService", ticketId);
-    
     try {
         const res = await fetch(`${BASE_URL}/${ticketId}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
-        console.log("token", token);
-        
         return res.json();
     } catch (e) {
         console.log(e);
     }
 }
 
-export { index, show, };
+const create = async (ticketFormData) => {
+    try {
+        const res = await fetch(BASE_URL, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(ticketFormData),
+        })
+        return res.json();
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+export { index, show, create };
