@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import * as ticketService from '../../services/ticketService';
+import CommentForm from "../CommentForm/CommentForm";
 
 const TicketDetails = () => {
     const { ticketId } = useParams();
@@ -8,12 +9,9 @@ const TicketDetails = () => {
     
     const [ticket, setTicket] = useState(null);
 
-    console.log(ticket);
     
 
     useEffect(() => {
-        console.log("hello use effect");
-        
         const fetchTicket = async () => {
             try {
                 const ticketData = await ticketService.show(ticketId);
@@ -25,14 +23,43 @@ const TicketDetails = () => {
         fetchTicket();
     } , [ticketId]);
 
-    console.log("ticket", ticket);
+    const handleAddComment = async (commentFormData) => {
+        const newComment = await ticketService.createComment(ticketId, commentFormData);
+        setTicket({ ...ticket, comments: [...ticket.comments, newComment] });
+    }
     
 
     return (
         <main>
             <h1>Hello</h1>
-            <h2>{ticket.title}</h2>
-            <h3>{ticket.description}</h3>
+            <section>
+                {ticket === null ? (
+                   <p>Loading...</p>
+                ) : (
+                   <>
+                     <h2>{ticket.title}</h2>
+                     <h3>{ticket.priority}</h3>
+                   </>
+                )}
+            </section>
+            <section>
+                <h2>Comments</h2>
+                <CommentForm handleAddComment={handleAddComment} />
+                {ticket === null ? (
+                    <p>Loading...</p>
+                ) : (
+                    <>
+                        {ticket.comments.length === 0 && <p>No comments yet</p>}
+                        {ticket.comments.map((comment) => (
+                            <div key={comment._id}>
+                                <h3>{comment.text}</h3>
+                                <p>{comment.author.username} - {new Date(comment.createdAt).toLocaleDateString()}</p>
+                            </div>
+                        ))}
+                        
+                    </>
+                )}
+            </section>
         </main>
     )
 }
