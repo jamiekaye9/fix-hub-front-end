@@ -11,6 +11,7 @@ import TicketDetails from './components/TicketDetails/TicketDetails';
 import TicketForm from './components/TicketForm/TicketForm';
 import { UserContext } from './contexts/UserContext';
 import * as ticketService from './services/ticketService';
+import CommentForm from './components/CommentForm/CommentForm';
 
 
 const App = () => {
@@ -56,6 +57,7 @@ const App = () => {
             <Route path='/tickets/:ticketId' element={<TicketDetails handleDeleteTicket={handleDeleteTicket} />}/>
             <Route path='/tickets/new' element={<TicketForm handleAddTicket={handleAddTicket} />}/>
             <Route path='/tickets/:ticketId/edit' element={<TicketForm handleUpdateTicket={handleUpdateTicket} />} />
+            <Route path='/tickets/:ticketId/comments/:commentId/edit' element={<CommentForm />} />
           </>
         ) : (
           <>

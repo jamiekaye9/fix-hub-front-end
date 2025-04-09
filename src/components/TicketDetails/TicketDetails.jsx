@@ -25,7 +25,12 @@ const TicketDetails = (props) => {
         const newComment = await ticketService.createComment(ticketId, commentFormData);
         setTicket({ ...ticket, comments: [...ticket.comments, newComment] });
     }
-    
+
+    const handleDeleteComment = async (commentId) => {
+        const deleteComment = await ticketService.deleteComment(ticketId, commentId);
+        setTicket({ ...ticket, comments: ticket.comments.filter((comment) => comment._id !== commentId) });
+    }
+ 
     return (
         <main>
             <h1>Hello</h1>
@@ -59,6 +64,8 @@ const TicketDetails = (props) => {
                             <div key={comment._id}>
                                 <h3>{comment.text}</h3>
                                 <p>{comment.author.username} - {new Date(comment.createdAt).toLocaleDateString()}</p>
+                                <Link to={`/tickets/${ticketId}/comments/${comment._id}/edit`}>Edit</Link>
+                                <button onClick={() => handleDeleteComment(comment._id)}>Delete</button>
                             </div>
                         ))}
                         

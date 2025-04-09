@@ -88,5 +88,39 @@ const updateTicket = async (ticketId, ticketFormData) => {
     }
 }
 
+const deleteComment = async (ticketId, commentId) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${ticketId}/comments/${commentId}`, {
+            method: 'DELETE',
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        });
+        if (!res.ok) {
+            throw new Error('Network response was not ok');
+        }
+        if (res.status === 204) {
+            return { message: 'Comment deleted successfully' };
+        }
+        return res.json();
+    } catch (e) {
+        console.log(e);
+    }
+}
 
-export { index, show, create, createComment, deleteTicket, updateTicket };
+const updateComment = async (ticketId, commentId, commentFormData) => {
+    try {
+        const res = await fetch(`${BASE_URL}/${ticketId}/comments/${commentId}`, {
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(commentFormData),
+        })
+        return res.json();
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+
+export { index, show, create, createComment, deleteTicket, updateTicket, deleteComment, updateComment };
