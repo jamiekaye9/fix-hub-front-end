@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import * as userService from '../../services/userService';
+import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
     const { user } = useContext(UserContext);
