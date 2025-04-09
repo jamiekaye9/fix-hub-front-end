@@ -1,0 +1,18 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 1500px;
+  height: 100vh;
+  padding: 0px;
+  border: 1px solid #4BDFE3;
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+}
+
+.userList {
+    color: white;
+}

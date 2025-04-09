@@ -45,8 +45,7 @@ button, a {
 }
 
 .app-content {
-  margin-left: 250px;
-  padding: 20px;
+  margin-left: 30px;
   width: calc(100% - 250px);
   color: white;
 }
