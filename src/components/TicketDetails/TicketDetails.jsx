@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router";
 import { useEffect, useState, useContext } from "react";
 import * as ticketService from '../../services/ticketService';
+import * as userService from '../../services/userService';
 import CommentForm from "../CommentForm/CommentForm";
 import { UserContext } from "../../contexts/UserContext";
 
@@ -13,6 +14,8 @@ const TicketDetails = (props) => {
         const fetchTicket = async () => {
             try {
                 const ticketData = await ticketService.show(ticketId);
+                console.log('ticket fetch', ticketData);
+                
                 setTicket(ticketData);
             } catch (e) {
                 console.log(e); 

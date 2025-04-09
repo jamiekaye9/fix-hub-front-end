@@ -122,5 +122,27 @@ const updateComment = async (ticketId, commentId, commentFormData) => {
     }
 }
 
+const myRequests = async () => {
+    try {
+        const res = await fetch(`${BASE_URL}/my-requests`, {
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        });
+        return res.json();
+    } catch (e) {
+        console.log(e);
+    }
+}
 
-export { index, show, create, createComment, deleteTicket, updateTicket, deleteComment, updateComment };
+const ticketsAssigned = async () => {
+    try {
+        const res = await fetch(`${BASE_URL}/tickets-assigned`, {
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        });
+        return res.json();
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+
+export { index, show, create, createComment, deleteTicket, updateTicket, deleteComment, updateComment, myRequests, ticketsAssigned };

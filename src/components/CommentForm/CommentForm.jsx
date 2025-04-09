@@ -12,12 +12,16 @@ const CommentForm = (props) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         if (ticketId && commentId) {
-            ticketService.updateComment(ticketId, commentId, formData)
+            const updatedComment = await ticketService.updateComment(ticketId, commentId, formData)
+            console.log('updated comment');
+            
             navigate(`/tickets/${ticketId}`)
         } else {
+            console.log('new comment');
+            
             props.handleAddComment(formData)
         }
         console.log(formData);

@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router';
+import './App.css';
 
 import NavBar from './components/NavBar/NavBar';
 import SignUpForm from './components/SignUpForm/SignUpForm';
@@ -12,6 +13,8 @@ import TicketForm from './components/TicketForm/TicketForm';
 import { UserContext } from './contexts/UserContext';
 import * as ticketService from './services/ticketService';
 import CommentForm from './components/CommentForm/CommentForm';
+import MyRequests from './components/MyRequests/MyRequests';
+import TicketsAssigned from './components/TicketsAssigned/TicketsAssigned';
 
 
 const App = () => {
@@ -46,27 +49,32 @@ const App = () => {
 
   }
 
+
   return (
-    <>
+    <main className="app">
       <NavBar />
-      <Routes>
-        <Route path='/' element={user ? <Dashboard /> : <Landing />}/>
-        {user ? (
-          <>
+      <section className="app-content">
+        <Routes>
+          <Route path='/' element={user ? <Dashboard /> : <Landing />}/>
+          {user ? (
+           <>
             <Route path='/tickets' element={<AllTickets tickets={tickets} />}/>
             <Route path='/tickets/:ticketId' element={<TicketDetails handleDeleteTicket={handleDeleteTicket} />}/>
             <Route path='/tickets/new' element={<TicketForm handleAddTicket={handleAddTicket} />}/>
             <Route path='/tickets/:ticketId/edit' element={<TicketForm handleUpdateTicket={handleUpdateTicket} />} />
             <Route path='/tickets/:ticketId/comments/:commentId/edit' element={<CommentForm />} />
-          </>
-        ) : (
-          <>
+            <Route path='/tickets/my-requests' element={<MyRequests tickets={tickets} />} />
+            <Route path='/tickets/tickets-assigned' element={<TicketsAssigned tickets={tickets} />}/>
+           </>
+          ) : (
+           <>
             <Route path='/sign-up' element={<SignUpForm />}/>
             <Route path='/sign-in' element={<SignInForm />}/>
-          </>
-        )}
-      </Routes>
-    </>
+           </>
+          )}
+        </Routes>
+      </section>
+    </main>
   )
 }
 
