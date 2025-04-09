@@ -17,6 +17,8 @@ const TicketDetails = (props) => {
                 console.log('ticket fetch', ticketData);
                 
                 setTicket(ticketData);
+                console.log('ticket updated', ticket);
+                
             } catch (e) {
                 console.log(e); 
             }

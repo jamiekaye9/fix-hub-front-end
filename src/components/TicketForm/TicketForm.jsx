@@ -1,31 +1,50 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { useParams } from "react-router";
 import * as ticketService from "../../services/ticketService";
+import styles from './TicketForm.module.css'
+import * as userService from "../../services/userService"
 
 const TicketForm = (props) => {
     const { ticketId } = useParams();
     const [formData, setFormData] = useState({
         title: "",
         description: "",
-        priority: "low",
-        type: "software",
+        priority: "",
+        type: "",
         technology: "",
+        status: "",
+        assignedTo: "",
     })
+    const [serviceDesk, setServiceDesk] = useState()
 
     useEffect(() => {
         const fetchTicket = async () => {
             const ticketData = await ticketService.show(ticketId);
             setFormData(ticketData)
+            
         }
         if (ticketId) fetchTicket();
         return () => setFormData({
             title: "",
             description: "",
-            priority: "low",
-            type: "software",
+            priority: "",
+            type: "",
             technology: "",
         })
     } , [ticketId]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            const allUsers = await userService.show({ role: "serviceDesk" })
+            console.log("allusers", allUsers);
+            
+            setServiceDesk(allUsers)
+
+        }
+        fetchUsers()
+        console.log(serviceDesk);
+        
+    }, [])
 
 const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -41,11 +60,11 @@ const handleSubmit = (e) => {
 }
 
 return (
-    <main>
-        <h1>{ticketId ? 'Edit Ticket' : 'Create a Ticket'}</h1>
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="title">Title</label>
+    <main className={styles.ticketForm}>
+        <h1 className={styles.title}>{ticketId ? 'Edit Ticket' : 'Create a Ticket'}</h1>
+        <form className={styles.formItems} onSubmit={handleSubmit}>
+            <div className={styles.div}>
+                <label htmlFor="title" className={styles.label}>Title</label>
                 <input
                     type="text"
                     name="title"
@@ -53,37 +72,42 @@ return (
                     value={formData.title}
                     onChange={handleChange}
                     required
+                    className={styles.input}
                 />
             </div>
-            <div>
-                <label htmlFor="priority">Priority</label>
+            <div className={styles.div}>
+                <label htmlFor="priority" className={styles.label}>Priority</label>
                 <select
                     name="priority"
                     id="priority"
                     value={formData.priority}
                     onChange={handleChange}
                     required
+                    className={styles.input}
                 >
+                    <option value="" disabled>Select Priority</option>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
             </div>
-            <div>
-                <label htmlFor="type">Type</label>
+            <div className={styles.div}>
+                <label htmlFor="type" className={styles.label}>Type</label>
                 <select
                     name="type"
                     id="type"
                     value={formData.type}
                     onChange={handleChange}
                     required
+                    className={styles.input}
                 >
+                    <option value="" disabled>Select Type</option>
                     <option value="software">Software</option>
                     <option value="hardware">Hardware</option>
                 </select>
             </div>
-            <div>
-                <label htmlFor="technology">Technology</label>
+            <div className={styles.div}>
+                <label htmlFor="technology" className={styles.label}>Technology</label>
                 <input
                     type="text"
                     name="technology"
@@ -91,10 +115,44 @@ return (
                     value={formData.technology}
                     onChange={handleChange}
                     required
+                    className={styles.input}
                 />
             </div>
-            <div>
-                <label htmlFor="description">Description</label>
+            {ticketId && (
+                <>
+                   <div>
+                      <label htmlFor="status">Status</label>
+                      <select 
+                        name="status" 
+                        id="status"
+                        value={formData.status}
+                        onChange={handleChange}
+                        required
+                      >
+                        <option value="" disabled>Select Status</option>
+                        <option value="open">Open</option>
+                        <option value="inProgress">In Progress</option>
+                        <option value="resolved">Resolved</option>
+                        <option value="closed">Closed</option>
+                      </select>
+                   </div>
+                   <div>
+                      <label htmlFor="assignedTo">Assigned To</label>
+                      <select 
+                         name="assignedTo" 
+                         id="assignedTo"
+                         value={formData.assignedTo}
+                         onChange={handleChange}
+                         required>
+                         {serviceDesk.map((user) => {
+                            <option key={user._id} value={user._id}>{user.firstName} {user.lastName}</option>
+                         })}
+                      </select>
+                   </div>
+                </>
+            )}
+            <div className={styles.div}>
+                <label htmlFor="description" className={styles.label}>Description</label>
                 <textarea
                     type="text"
                     name="description"
@@ -102,10 +160,11 @@ return (
                     value={formData.description}
                     onChange={handleChange}
                     required
+                    className={styles.inputBox}
                 />
             </div>
-            <div>
-                <button type="submit">Create Ticket</button>
+            <div className={styles.buttonDiv}>
+                <button type="submit" className={styles.button}>Create Ticket</button>
             </div>
         </form>
     </main>

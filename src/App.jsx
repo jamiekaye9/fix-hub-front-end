@@ -17,6 +17,7 @@ import MyRequests from './components/MyRequests/MyRequests';
 import TicketsAssigned from './components/TicketsAssigned/TicketsAssigned';
 
 
+
 const App = () => {
   const { user } = useContext(UserContext);
   const [tickets, setTickets] = useState([]);
@@ -44,6 +45,7 @@ const App = () => {
 
   const handleUpdateTicket = async (ticketId, ticketFormData) => {
     const updatedTicket = await ticketService.updateTicket(ticketId, ticketFormData);
+    setTickets(updatedTicket)
     setTickets(tickets.map((ticket) => ticket._id === ticketId ? updatedTicket : ticket));
     navigate(`/tickets/${ticketId}`);
 
