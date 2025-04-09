@@ -1,15 +1,13 @@
-import { useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router";
+import { useEffect, useState, useContext } from "react";
 import * as ticketService from '../../services/ticketService';
 import CommentForm from "../CommentForm/CommentForm";
+import { UserContext } from "../../contexts/UserContext";
 
-const TicketDetails = () => {
+const TicketDetails = (props) => {
     const { ticketId } = useParams();
-    console.log({ticketId});
-    
+    const { user } = useContext(UserContext);
     const [ticket, setTicket] = useState(null);
-
-    
 
     useEffect(() => {
         const fetchTicket = async () => {
@@ -28,7 +26,6 @@ const TicketDetails = () => {
         setTicket({ ...ticket, comments: [...ticket.comments, newComment] });
     }
     
-
     return (
         <main>
             <h1>Hello</h1>
@@ -36,10 +33,18 @@ const TicketDetails = () => {
                 {ticket === null ? (
                    <p>Loading...</p>
                 ) : (
-                   <>
-                     <h2>{ticket.title}</h2>
-                     <h3>{ticket.priority}</h3>
-                   </>
+                    <>
+                      <section>
+                        <h2>{ticket.title}</h2>
+                        <h3>{ticket.priority}</h3>
+                      </section>
+                      {ticket.openedBy._id === user._id && (
+                        <section>
+                            <Link to={`/tickets/${ticketId}/edit`}>Edit</Link>
+                            <button onClick={() => props.handleDeleteTicket(ticketId)}>Delete</button>
+                        </section>
+                      )}
+                    </>
                 )}
             </section>
             <section>

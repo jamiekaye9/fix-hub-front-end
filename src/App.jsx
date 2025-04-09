@@ -32,6 +32,19 @@ const App = () => {
     if (user) fetchAllTickets();
   }, [user]);
 
+  const handleDeleteTicket = async (ticketId) => {
+    const deletedTicket = await ticketService.deleteTicket(ticketId);
+    setTickets(prev => prev.filter((ticket) => ticket._id !== ticketId));
+    navigate('/tickets');
+  }
+
+  const handleUpdateTicket = async (ticketId, ticketFormData) => {
+    const updatedTicket = await ticketService.updateTicket(ticketId, ticketFormData);
+    setTickets(tickets.map((ticket) => ticket._id === ticketId ? updatedTicket : ticket));
+    navigate(`/tickets/${ticketId}`);
+
+  }
+
   return (
     <>
       <NavBar />
@@ -40,8 +53,9 @@ const App = () => {
         {user ? (
           <>
             <Route path='/tickets' element={<AllTickets tickets={tickets} />}/>
-            <Route path='/tickets/:ticketId' element={<TicketDetails />}/>
+            <Route path='/tickets/:ticketId' element={<TicketDetails handleDeleteTicket={handleDeleteTicket} />}/>
             <Route path='/tickets/new' element={<TicketForm handleAddTicket={handleAddTicket} />}/>
+            <Route path='/tickets/:ticketId/edit' element={<TicketForm handleUpdateTicket={handleUpdateTicket} />} />
           </>
         ) : (
           <>

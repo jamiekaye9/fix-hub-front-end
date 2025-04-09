@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router";
+import * as ticketService from "../../services/ticketService";
 
 const TicketForm = (props) => {
+    const { ticketId } = useParams();
     const [formData, setFormData] = useState({
         title: "",
         description: "",
@@ -9,17 +12,37 @@ const TicketForm = (props) => {
         technology: "",
     })
 
+    useEffect(() => {
+        const fetchTicket = async () => {
+            const ticketData = await ticketService.show(ticketId);
+            setFormData(ticketData)
+        }
+        if (ticketId) fetchTicket();
+        return () => setFormData({
+            title: "",
+            description: "",
+            priority: "low",
+            type: "software",
+            technology: "",
+        })
+    } , [ticketId]);
+
 const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 }
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddTicket(formData)
+    if (ticketId) {
+        props.handleUpdateTicket(ticketId, formData)
+    } else { 
+        props.handleAddTicket(formData)
+    }
 }
 
 return (
     <main>
+        <h1>{ticketId ? 'Edit Ticket' : 'Create a Ticket'}</h1>
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="title">Title</label>
