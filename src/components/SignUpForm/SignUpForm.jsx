@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
 import { signUp } from '../../services/authService';
 import { UserContext } from '../../contexts/UserContext';
+import styles from './SignUpForm.module.css';
 
 const SignUpForm = () => {
     const navigate = useNavigate();
@@ -39,12 +40,12 @@ const SignUpForm = () => {
     }
 
     return (
-        <main>
-            <h1>Sign Up</h1>
+        <main className={styles.signUpForm}>
+            <h1 className={styles.title}>Sign Up</h1>
             <p>{message}</p>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="firstName">First Name</label>
+            <form className={styles.formItems} onSubmit={handleSubmit}>
+                <div className={styles.div}>
+                    <label htmlFor="firstName" className={styles.label}>First Name</label>
                     <input 
                       type="text"
                       id='firstName'
@@ -52,10 +53,11 @@ const SignUpForm = () => {
                       name='firstName'
                       onChange={handleChange}
                       required
+                      className={styles.input}
                     />
                 </div>
-                <div>
-                    <label htmlFor="lastName">Last Name</label>
+                <div className={styles.div}>
+                    <label htmlFor="lastName" className={styles.label}>Last Name</label>
                     <input 
                       type="text"
                       id='lastName'
@@ -63,10 +65,11 @@ const SignUpForm = () => {
                       name='lastName'
                       onChange={handleChange}
                       required
+                      className={styles.input}
                     />
                 </div>
-                <div>
-                    <label htmlFor="username">Username</label>
+                <div className={styles.div}>
+                    <label htmlFor="username" className={styles.label}>Username</label>
                     <input 
                       type="text"
                       id='username'
@@ -74,23 +77,26 @@ const SignUpForm = () => {
                       name='username'
                       onChange={handleChange}
                       required
+                      className={styles.input}
                     />
                 </div>
-                <div>
-                    <label htmlFor="role">Role</label>
+                <div className={styles.div}>
+                    <label htmlFor="role" className={styles.label}>Role</label>
                     <select 
                       id='role'
                       value={role}
                       name='role'
                       onChange={handleChange}
                       required
+                      className={styles.input}
                     >
+                      <option value="" disabled>Select a role</option>
                       <option value="serviceDesk">Service Desk</option>
                       <option value="requestor">Requestor</option>
                     </select>
                 </div>
-                <div>
-                    <label htmlFor="password">Password</label>
+                <div className={styles.div}>
+                    <label htmlFor="password" className={styles.label}>Confirm Password</label>
                     <input 
                       type="password"
                       id='password'
@@ -98,10 +104,11 @@ const SignUpForm = () => {
                       name='password'
                       onChange={handleChange}
                       required
+                      className={styles.input}
                     />
                 </div>
-                <div>
-                    <label htmlFor="passwordConf">Password</label>
+                <div className={styles.div}>
+                    <label htmlFor="passwordConf" className={styles.label}>Password</label>
                     <input 
                       type="password"
                       id='passwordConf'
@@ -109,11 +116,12 @@ const SignUpForm = () => {
                       name='passwordConf'
                       onChange={handleChange}
                       required
+                      className={styles.input}
                     />
                 </div>
-                <div>
-                    <button disabled={isFormValid()}>Sign Up</button>
-                    <button onClick={() => navigate('/')}>Cancel</button>
+                <div className={styles.buttonDiv}>
+                    <button className={styles.button} disabled={isFormValid()}>Sign Up</button>
+                    <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
                 </div>
             </form>
         </main>

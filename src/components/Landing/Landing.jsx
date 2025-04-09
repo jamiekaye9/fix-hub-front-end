@@ -4,7 +4,7 @@ const Landing = () => {
     return (
         <main className={styles.landing}>
             <img className="big-logo" src="/Images/fix-hub-logo.png" alt="Fix Hub Logo" />
-            <h1>Welcome to Fix Hub</h1>
+            <h1 className={styles.title}>Welcome to Fix Hub</h1>
         </main>
     )
 }

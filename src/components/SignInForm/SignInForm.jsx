@@ -31,12 +31,12 @@ const SignInForm = () => {
 
     return (
         <main className={styles.signInForm}>
-            <h1>Sign In</h1>
+            <h1 className={styles.title}>Sign In</h1>
             <p>{message}</p>
             <form className={styles.formItems} autoComplete='off' onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username">Username</label>
-                    <input 
+                <div className={styles.div}>
+                    <label htmlFor="username" className={styles.label}>Username</label>
+                    <input
                       type="text"
                       autoComplete='off'
                       id='username'
@@ -44,10 +44,11 @@ const SignInForm = () => {
                       name='username'
                       onChange={handleChange}
                       required
+                      className={styles.input}
                     />
                 </div>
-                <div>
-                    <label htmlFor="password">Password</label>
+                <div className={styles.div}>
+                    <label htmlFor="password" className={styles.label}>Password</label>
                     <input 
                       type="password"
                       autoComplete='off'
@@ -56,11 +57,12 @@ const SignInForm = () => {
                       name='password'
                       onChange={handleChange}
                       required
+                      className={styles.input}
                     />
                 </div>
-                <div>
-                    <button>Sign In</button>
-                    <button onClick={() => navigate('/')}>Cancel</button>
+                <div className={styles.buttonDiv}>
+                    <button className={styles.button}>Sign In</button>
+                    <button className={styles.button} onClick={() => navigate('/')}>Cancel</button>
                 </div>
             </form>
         </main>

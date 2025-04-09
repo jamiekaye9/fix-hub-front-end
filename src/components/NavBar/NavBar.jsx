@@ -16,7 +16,7 @@ const NavBar = () => {
             {user ? (
                 <section className={styles.navbarContainer}>
                   <img className="small-logo" src="/Images/fix-hub-logo.png" alt="Fix Hub Logo" />
-                  <ul className={styles.navbar}>
+                  <ul className={styles.navbarIn}>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/tickets/new'>Create a Ticket</Link></li>
                     <li><Link to='/tickets'>All Tickets</Link></li>
@@ -31,7 +31,7 @@ const NavBar = () => {
                   </ul>
                 </section>
             ) : (
-                <ul className={styles.navbar}>
+                <ul className={styles.navbarOut}>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/sign-in'>Sign In</Link></li>
                     <li><Link to='/sign-up'>Sign Up</Link></li>

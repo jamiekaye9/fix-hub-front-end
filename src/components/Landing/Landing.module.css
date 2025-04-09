@@ -5,9 +5,10 @@
     justify-content: center;
     gap: 20px;
     margin-top: 15%;
+    margin-right: 55%;
 }
 
-h1 {
+.title {
     color: white;
     font-size: 50px;
     text-align: center;
