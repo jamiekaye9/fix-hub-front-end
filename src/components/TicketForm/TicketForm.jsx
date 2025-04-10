@@ -15,7 +15,7 @@ const TicketForm = (props) => {
         status: "",
         assignedTo: "",
     })
-    const [serviceDesk, setServiceDesk] = useState()
+    const [serviceDesk, setServiceDesk] = useState([])
 
     useEffect(() => {
         const fetchTicket = async () => {
@@ -35,10 +35,10 @@ const TicketForm = (props) => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            const allUsers = await userService.show({ role: "serviceDesk" })
+            const allUsers = await userService.index()
             console.log("allusers", allUsers);
-            
-            setServiceDesk(allUsers)
+            const serviceDesk = allUsers.filter((user) => user.role === "serviceDesk")
+            setServiceDesk(serviceDesk)
 
         }
         fetchUsers()
@@ -120,14 +120,15 @@ return (
             </div>
             {ticketId && (
                 <>
-                   <div>
-                      <label htmlFor="status">Status</label>
+                   <div className={styles.div}>
+                      <label htmlFor="status" className={styles.label}>Status</label>
                       <select 
                         name="status" 
                         id="status"
                         value={formData.status}
                         onChange={handleChange}
                         required
+                        className={styles.input}
                       >
                         <option value="" disabled>Select Status</option>
                         <option value="open">Open</option>
@@ -136,16 +137,20 @@ return (
                         <option value="closed">Closed</option>
                       </select>
                    </div>
-                   <div>
-                      <label htmlFor="assignedTo">Assigned To</label>
+                   <div className={styles.div}>
+                      <label htmlFor="assignedTo" className={styles.label}>Assigned To</label>
                       <select 
                          name="assignedTo" 
                          id="assignedTo"
                          value={formData.assignedTo}
                          onChange={handleChange}
-                         required>
+                         required
+                         className={styles.input}
+                         >
                          {serviceDesk.map((user) => {
-                            <option key={user._id} value={user._id}>{user.firstName} {user.lastName}</option>
+                            return(
+                              <option key={user._id} value={user._id}>{user.firstName} {user.lastName}</option>
+                            )
                          })}
                       </select>
                    </div>
