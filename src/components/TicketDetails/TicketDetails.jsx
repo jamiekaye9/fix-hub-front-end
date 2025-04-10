@@ -58,7 +58,7 @@ const TicketDetails = (props) => {
                   <h2 className={styles.title}>{ticket.title}</h2>
                   {(user._id === ticket.openedBy._id ||
                     user._id === ticket.assignedTo._id) && (
-                    <>
+                    <div className={styles.buttonGroup}>
                       <Link
                         className={styles.edit}
                         to={`/tickets/${ticketId}/edit`}
@@ -71,7 +71,7 @@ const TicketDetails = (props) => {
                       >
                         Delete
                       </button>
-                    </>
+                    </div>
                   )}
                 </section>
                 <div className={styles.ticketDetails}>
