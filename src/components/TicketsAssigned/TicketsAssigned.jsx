@@ -29,7 +29,7 @@ const TicketsAssigned = (props) => {
                         </div>
                         {assignedTickets.map((ticket) => (
                             <div key={ticket._id} className={styles.ticketCard}>
-                                <h2 className={styles.itemTitle}>
+                                <h2 className={styles.itemTitleLink}>
                                     <Link className={styles.link} to={`/tickets/${ticket._id}`}>
                                         {ticket.title}
                                     </Link>

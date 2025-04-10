@@ -66,6 +66,7 @@
     gap: 2rem;
     padding: 2rem;
     justify-content: center;
+    /* width: 450px; */
     
 }
 
@@ -79,14 +80,15 @@
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     width: 450px;
+    min-width: 450px;
     font-size: 20px;
+    word-break: break-word; ;
 }
 
 .comment {
     display: flex;
     flex-direction: column;
     gap: 0.1rem;
-    /* padding: 2rem; */
     background-color: #1c1c1c;
     color: white;
     border: 1px solid #444;
@@ -94,6 +96,7 @@
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     width: 800px;
     height: 120px;
+    padding: 25px;
 }
 
 .buttonContainer {
@@ -103,6 +106,9 @@
     justify-content: center;
     align-items: center;
     height: 100px;
+    border: 1px solid #444;
+    margin: 25px;
+    overflow: hidden;
 }
 
 .commentSection {
@@ -115,6 +121,8 @@
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     width: 900px;
+    height: 776px;
+    overflow: scroll;
 }
 
 .commentForm {

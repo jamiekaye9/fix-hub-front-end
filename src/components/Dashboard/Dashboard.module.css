@@ -1,18 +1,86 @@
 .dashboardContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  width: 1500px;
   height: 100vh;
-  padding: 0px;
-  border: 1px solid #4BDFE3;
+  overflow: scroll;
 }
 
 .title {
-    color: white;
-    font-size: 50px;
+  color: white;
+  font-size: 50px;
+  text-align: center;
 }
 
-.userList {
-    color: white;
+.cardGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-right: 50px;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.userCard {
+  display: flex;
+  width: 800px;
+  height: 60px;
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s;
+}
+
+.ticketCard:hover {
+  transform: scale(1.02);
+}
+
+.userCard {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.link {
+  color: #4BDFE3;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.item, .itemTitle, .itemTitleLink {
+  display: flex;
+  width: 450px;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemTitle {
+  width: 700px;
+}
+
+
+.itemTitleLink {
+width: 800px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+text-align: center;
+word-break: break-word;
+}
+
+.headerCard {
+  display: flex;
+  background-color: #4BDFE3;
+  color: #282828;
+  font-size: 20px;
+  font-weight: bold;
+  height: 55px;
+  width: 800px;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+
 }

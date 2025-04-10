@@ -20,21 +20,28 @@ const Dashboard = () => {
     }, [user]);
 
     return (
-        <main className={styles.dashboardContainer}>
-            <h1 className={styles.title}>Dashboard</h1>
+        <div className={styles.dashboardContainer}>
+        <h1 className={styles.title}>Dashboard</h1>
+        <main className={styles.cardGrid}>
+            <div className={styles.headerCard}>
+                            <p className={styles.item}>User</p>
+                            <p className={styles.item}>Username</p>
+                            <p className={styles.item}>Role</p>
+            </div>
             {users.length > 0 ? (
                 users.map((u) => (
-                    <section key={u._id}>
-                        <ul>
-                            <li className={styles.userList}>{u.firstName} {u.lastName}</li>
-                        </ul>
-                    </section>
+                        <div className={styles.userCard} key={(u._id)}>
+                            <p className={styles.item}>{u.firstName} {u.lastName}</p>
+                            <p className={styles.item}>{u.username}</p>
+                            <p className={styles.item}>{u.role}</p>
+                        </div>
                 ))
+                
             ) : (
                 <p>No users found.</p>
             )}
         </main>
-    )
-}
+        </div>
+)}
 
 export default Dashboard;
