@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import * as ticketService from "../../services/ticketService";
+import styles from '../TicketDetails/TicketDetails.module.css';
 
 
 const CommentForm = (props) => {
@@ -39,9 +40,8 @@ const CommentForm = (props) => {
     }, [ticketId, commentId]);
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className={styles.commentForm} onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="text">Comment</label>
                 <textarea
                     type="text"
                     name="text"
@@ -49,10 +49,11 @@ const CommentForm = (props) => {
                     value={formData.text}
                     onChange={handleChange}
                     required
+                    className={styles.textarea}
                 />
             </div>
             <div>
-                <button type="submit">Submit</button>
+                <button className={styles.button} type="submit">Submit</button>
             </div>
         </form>
     )

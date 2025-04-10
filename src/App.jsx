@@ -24,6 +24,7 @@ const App = () => {
   const navigate = useNavigate();
   const handleAddTicket = async (ticketFormData) => {
     const newTicket = await ticketService.create(ticketFormData);
+    
     setTickets([newTicket, ...tickets]);
     navigate('/tickets');
     
@@ -45,11 +46,22 @@ const App = () => {
 
   const handleUpdateTicket = async (ticketId, ticketFormData) => {
     const updatedTicket = await ticketService.updateTicket(ticketId, ticketFormData);
-    setTickets(updatedTicket)
-    setTickets(tickets.map((ticket) => ticket._id === ticketId ? updatedTicket : ticket));
+    setTickets(prevTickets =>
+      prevTickets.map(ticket =>
+        ticket._id === ticketId ? updatedTicket : ticket
+      )
+    );
     navigate(`/tickets/${ticketId}`);
+  };
+  
 
-  }
+  // const handleUpdateTicket = async (ticketId, ticketFormData) => {
+  //   const updatedTicket = await ticketService.updateTicket(ticketId, ticketFormData);
+  //   // setTickets(updatedTicket)
+  //   setTickets(tickets.map((ticket) => ticket._id === ticketId ? updatedTicket : ticket));
+  //   navigate(`/tickets/${ticketId}`);
+
+  // }
 
 
   return (

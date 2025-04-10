@@ -20,7 +20,10 @@ const TicketForm = (props) => {
     useEffect(() => {
         const fetchTicket = async () => {
             const ticketData = await ticketService.show(ticketId);
-            setFormData(ticketData)
+            setFormData({
+                ...ticketData,
+                assignedTo: ticketData.assignedTo?._id || ticketData.assignedTo || "",
+              });
             
         }
         if (ticketId) fetchTicket();

@@ -33,7 +33,7 @@
   }
   
   .link {
-    color: #4eaaff;
+    color: #4BDFE3;
     text-decoration: none;
   }
   
@@ -47,6 +47,7 @@
     align-items: center;
     justify-content: center;
 }
+
 
 .itemTitle {
     width: 700px;

@@ -1,0 +1,185 @@
+.title {
+    color: white;
+    font-size: 50px;
+    text-align: left;
+    width: 1000px;
+}
+
+.subTitle {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+.button {
+    background-color: #4BDFE3;
+    height: 35px;
+    width: 120px;
+    font-size: larger;
+    font-family: 'Barlow', sans-serif;
+    border-radius: 5px;
+    border: none;
+  }
+
+.commentButton {
+    background-color: #4BDFE3;
+    height: 25px;
+    width: 100px;
+    font-size: larger;
+    font-family: 'Barlow', sans-serif;
+    border-radius: 5px;
+    border: none;
+}
+.edit {
+    background-color: white;
+    height: 35px;
+    width: 120px;
+    font-size: larger;
+    font-family: 'Barlow', sans-serif;
+    border-radius: 5px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #282828;  
+}
+
+.subEdit {
+    background-color: white;
+    height: 25px;
+    width: 100px;
+    font-size: larger;
+    font-family: 'Barlow', sans-serif;
+    border-radius: 5px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #282828;  
+}
+
+.ticketDetails {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+    
+}
+
+.ticketInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #1c1c1c;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    width: 450px;
+    font-size: 20px;
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    /* padding: 2rem; */
+    background-color: #1c1c1c;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    width: 800px;
+    height: 120px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.commentSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    width: 900px;
+}
+
+.commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: white;
+    width: 800px;
+}
+
+.textarea {
+    width: 800px;
+    height: 100px;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    background-color: #282828;
+    border: 2px solid #4BDFE3;
+    color: white;
+}
+
+.commentContainer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 800px;
+}
+
+.commentActions {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    justify-content: right;
+}
+
+.statusRadar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+.statusBox {
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1c1c;
+    color: white;
+    border: 1px solid #909090;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    background-color: #4BDFE3;
+}
