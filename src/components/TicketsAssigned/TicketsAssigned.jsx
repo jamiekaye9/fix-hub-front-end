@@ -1,25 +1,49 @@
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import styles from "./TicketsAssigned.module.css";
+import { Link } from "react-router";
 
 const TicketsAssigned = (props) => {
     const { user } = useContext(UserContext);
     const assignedTickets = props.tickets.filter(ticket => ticket.assignedTo === user._id);
     return (
         <main>
-            <h1>Tickets Assigned</h1>
-            <section>
+                <h1 className={styles.title}>All Tickets</h1>
                 {assignedTickets.length === 0 ? (
-                    <p>You have no requests.</p>
+                    <p>No tickets assigned</p>
                 ) : (
-                    assignedTickets.map((ticket) => (
-                        <div key={ticket._id}>
-                            <h2>{ticket.title}</h2>
-                            <h3>{ticket.priority}</h3>
+                    <div className={styles.cardGrid}>
+                        <div className={styles.headerCard}>
+                            <p className={styles.itemTitle}>Title</p>
+                            <p className={styles.item}>Status</p>
+                            <p className={styles.item}>Priority</p>
+                            <p className={styles.item}>Type</p>
+                            <p className={styles.item}>Technology</p>
+                            <p className={styles.item}>Opened By</p>
+                            <p className={styles.item}>Assigned To</p>
+                            <p className={styles.item}>Created</p>
+                            <p className={styles.item}>Updated</p>
                         </div>
-                    ))
+                        {assignedTickets.map((ticket) => (
+                            <div key={ticket._id} className={styles.ticketCard}>
+                                <h2 className={styles.itemTitle}>
+                                    <Link className={styles.link} to={`/tickets/${ticket._id}`}>
+                                        {ticket.title}
+                                    </Link>
+                                </h2>
+                                <p className={styles.item}>{ticket.status}</p>
+                                <p className={styles.item}>{ticket.priority}</p>
+                                <p className={styles.item}>{ticket.type}</p>
+                                <p className={styles.item}>{ticket.technology}</p>
+                                <p className={styles.item}>{ticket.openedBy?.username || 'Unknown'}</p>
+                                <p className={styles.item}>{ticket.assignedTo?.username || 'Unassigned'}</p>
+                                <p className={styles.item}>{new Date(ticket.createdAt).toLocaleDateString()}</p>
+                                <p className={styles.item}>{new Date(ticket.updatedAt).toLocaleDateString()}</p>
+                            </div>
+                        ))}
+                    </div>
                 )}
-            </section>
-        </main>
+            </main>
     )
 }
 
