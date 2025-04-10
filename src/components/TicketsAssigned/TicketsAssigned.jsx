@@ -27,6 +27,7 @@ const TicketsAssigned = (props) => {
                             <p className={styles.item}>Created</p>
                             <p className={styles.item}>Updated</p>
                         </div>
+                        <div className={styles.ticketCardContainer}>
                         {assignedTickets.map((ticket) => (
                             <div key={ticket._id} className={styles.ticketCard}>
                                 <h2 className={styles.itemTitleLink}>
@@ -44,6 +45,7 @@ const TicketsAssigned = (props) => {
                                 <p className={styles.item}>{new Date(ticket.updatedAt).toLocaleDateString()}</p>
                             </div>
                         ))}
+                        </div>
                     </div>
                 )}
             </main>

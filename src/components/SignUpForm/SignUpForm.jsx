@@ -42,7 +42,7 @@ const SignUpForm = () => {
     return (
         <main className={styles.signUpForm}>
             <h1 className={styles.title}>Sign Up</h1>
-            <p>{message}</p>
+            <p className={styles.message}>{message}</p>
             <form className={styles.formItems} onSubmit={handleSubmit}>
                 <div className={styles.div}>
                     <label htmlFor="firstName" className={styles.label}>First Name</label>

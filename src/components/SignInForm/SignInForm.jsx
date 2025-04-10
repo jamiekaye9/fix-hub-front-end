@@ -32,7 +32,7 @@ const SignInForm = () => {
     return (
         <main className={styles.signInForm}>
             <h1 className={styles.title}>Sign In</h1>
-            <p>{message}</p>
+            <p className={styles.message}>{message}</p>
             <form className={styles.formItems} autoComplete='off' onSubmit={handleSubmit}>
                 <div className={styles.div}>
                     <label htmlFor="username" className={styles.label}>Username</label>

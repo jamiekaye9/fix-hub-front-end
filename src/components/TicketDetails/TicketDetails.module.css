@@ -121,7 +121,7 @@
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
     width: 900px;
-    height: 776px;
+    height: 800px;
     overflow: scroll;
 }
 
@@ -159,6 +159,7 @@
     margin-top: 25px;
     margin-bottom: 25px;
     justify-content: right;
+    align-items: center;
 }
 
 .statusRadar {
@@ -190,4 +191,15 @@
 
 .active {
     background-color: #4BDFE3;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #444;
+    gap: 1px;
+}
+
+.ticketDescription {
+    margin: 0;
 }

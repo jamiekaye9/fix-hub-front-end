@@ -52,11 +52,6 @@ const NavBar = () => {
                       Tickets Assigned
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/" className={styles.link}>
-                      Reports
-                    </Link>
-                  </li>
                 </ul>
               </li>
             ) : null}

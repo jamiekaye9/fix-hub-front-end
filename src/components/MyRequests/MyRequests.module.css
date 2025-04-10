@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
+  align-items: center;
 }
 
 .ticketCard {
@@ -75,4 +76,13 @@ word-break: break-word;
   padding: 0.5rem;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 
+}
+
+.ticketCardContainer {
+  height: 830px;
+  overflow: scroll;
+  width: 1500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -6,6 +6,7 @@ import { UserContext } from "../../contexts/UserContext";
 import styles from "./TicketDetails.module.css";
 
 const TicketDetails = (props) => {
+  const capitalise = (word) => word?.charAt(0).toUpperCase() + word?.slice(1);
   const { ticketId } = useParams();
   const { user } = useContext(UserContext);
   const [ticket, setTicket] = useState(null);
@@ -76,7 +77,7 @@ const TicketDetails = (props) => {
                 <div className={styles.ticketDetails}>
                   <section className={styles.ticketInfo}>
                     <h3 className={styles.subTitle}>Details</h3>
-                    <p className={styles.status}>Status: {ticket.status}</p>
+                    <p className={styles.status}>Status: {(capitalise(ticket.status))}</p>
                     <section className={styles.statusRadar}>
                       <p
                         className={`${styles.statusBox} ${
@@ -99,14 +100,14 @@ const TicketDetails = (props) => {
                         }`}
                       ></p>
                     </section>
-                    <p>Priority: {ticket.priority}</p>
+                    <p>Priority: {(capitalise(ticket.priority))}</p>
                     <p>
-                      Assigned to: {ticket.assignedTo.firstName}{" "}
-                      {ticket.assignedTo.lastName}
+                      Assigned to: {(capitalise(ticket.assignedTo.firstName))}{" "}
+                      {(capitalise(ticket.assignedTo.lastName))}
                     </p>
                     <p>
-                      Opened by: {ticket.openedBy.firstName}{" "}
-                      {ticket.openedBy.lastName}
+                      Opened by: {(capitalise(ticket.openedBy.firstName))}{" "}
+                      {(capitalise(ticket.openedBy.lastName))}
                     </p>
                     <p>
                       Created at:{" "}
@@ -116,8 +117,10 @@ const TicketDetails = (props) => {
                       Updated at:{" "}
                       {new Date(ticket.updatedAt).toLocaleDateString()}
                     </p>
-                    <p>Description:</p>
-                    <p>{ticket.description}</p>
+                    <div className={styles.description}>
+                      <p>Description:</p>
+                      <p className={styles.ticketDescription}>{ticket.description}</p>
+                    </div>
                   </section>
                   <section className={styles.commentSection}>
                     <div className={styles.commentForm}>
@@ -139,14 +142,14 @@ const TicketDetails = (props) => {
                             </section>
                             <section className={styles.commentActions}>
                               {user._id === comment.author._id && (
-                                
                                 <>
-                                <p>
-                                {comment.author.username} -{" "}
-                                {new Date(
-                                  comment.createdAt
-                                ).toLocaleDateString()}
-                              </p>
+                                  <p>
+                                    {comment.author.firstName}{" "}
+                                    {comment.author.lastName} -{" "}
+                                    {new Date(
+                                      comment.createdAt
+                                    ).toLocaleDateString()}
+                                  </p>
                                   <Link
                                     className={styles.subEdit}
                                     to={`/tickets/${ticketId}/comments/${comment._id}/edit`}

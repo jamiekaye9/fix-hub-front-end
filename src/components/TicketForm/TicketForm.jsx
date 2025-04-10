@@ -172,7 +172,7 @@ return (
                 />
             </div>
             <div className={styles.buttonDiv}>
-                <button type="submit" className={styles.button}>Create Ticket</button>
+                <button type="submit" className={styles.button}>{!ticketId ? 'Create Ticket' : 'Update'}</button>
             </div>
         </form>
     </main>

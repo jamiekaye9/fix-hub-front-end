@@ -3,8 +3,65 @@
   overflow: scroll;
 }
 
-.title {
+.dashboardContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #282828;
+}
+
+.pieChart {
+  background-color: #1c1c1c;
   color: white;
+  border: 1px solid #444444;
+  border-radius: 12px;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s;
+  width: 670px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.barChart {
+    background-color: #1c1c1c;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s;
+    width: 670px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.barContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.reports {
+  height: 900px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title {
+  color: #ffffff;
   font-size: 50px;
   text-align: center;
 }
@@ -16,11 +73,13 @@
   margin-right: 50px;
   gap: 1rem;
   padding: 2rem;
+  width: 700px;
+  height: 900px;
 }
 
 .userCard {
   display: flex;
-  width: 800px;
+  width: 650px;
   height: 60px;
   background-color: #1c1c1c;
   color: white;
@@ -78,9 +137,14 @@ word-break: break-word;
   font-size: 20px;
   font-weight: bold;
   height: 55px;
-  width: 800px;
+  width: 650px;
   border-radius: 12px;
   padding: 0.5rem;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
 
+}
+
+.userCardContainer {
+  width: 660px;
+  overflow: scroll;
 }
