@@ -7,6 +7,8 @@ import { PieChart, Pie, Legend, BarChart, Bar, Cell } from "recharts";
 
 const Dashboard = () => {
   const [reportsData, setReportsData] = useState([]);
+  const [animateData01, setAnimateData01] = useState([]);
+  const [animateData02, setAnimateData02] = useState([]);
   const capitalise = (word) => word?.charAt(0).toUpperCase() + word?.slice(1);
   const splitCamelCase = (str) => {
     if (typeof str !== "string") return "";
@@ -87,6 +89,20 @@ const Dashboard = () => {
     ];
   };
 
+  useEffect(() => {
+    if (reportsData.length > 0) {
+      setAnimateData01([])
+      setAnimateData02([]);
+
+      const timeoutId = setTimeout(() => {
+        setAnimateData01(data01(reportsData));
+        setAnimateData02(data02(reportsData));
+      }
+      , 100);
+      return () => clearTimeout(timeoutId);
+    }
+    }, [reportsData]);
+
   return (
     <div className={styles.dashboardContainer}>
       <h1 className={styles.title}>Dashboard</h1>
@@ -124,7 +140,7 @@ const Dashboard = () => {
               margin={{ top: 20, right: 30, left: 20, bottom: 80 }}
             >
               <Pie
-                data={data01(reportsData)}
+                data={animateData01}
                 dataKey="value"
                 nameKey="name"
                 cx="50%"
@@ -135,6 +151,9 @@ const Dashboard = () => {
                 labelLine={false}
                 stroke="#000"
                 strokeWidth={2}
+                isAnimationActive={true}
+                animationDuration={800}
+                animationBegin={100}
               />
               <Legend
                 verticalAlign="bottom"
@@ -149,12 +168,12 @@ const Dashboard = () => {
               <BarChart
                 width={600}
                 height={320}
-                data={data02(reportsData)}
+                data={animateData02}
                 margin={{ top: 5, right: 30, left: 20, bottom: 40 }}
                 barCategoryGap={50}
               >
                 <Legend
-                  payload={data02(reportsData).map((item) => ({
+                  payload={animateData02.map((item) => ({
                     value: item.name,
                     type: "circle",
                     id: item.name,
@@ -163,8 +182,8 @@ const Dashboard = () => {
                   verticalAlign="bottom"
                   wrapperStyle={{ paddingTop: 20 }}
                 />
-                <Bar dataKey="value" name="Status">
-                  {data02(reportsData).map((entry, index) => (
+                <Bar dataKey="value" name="Status" isAnimationActive={true} animationBegin={100} animationDuration={800}>
+                  {animateData02.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.fill} />
                   ))}
                 </Bar>
