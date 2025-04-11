@@ -1,12 +1,15 @@
-# React + Vite
+<h1>FIX HUB</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src: "./images/fix-hub-logo.png" alt: "Fix Hub Logo">
 
-Currently, two official plugins are available:
+<p>This is an IT ticketing application, giving users the functionality to create, read, update and delete IT tickets. Within tickets, users also have the ability to create, read, update and delete comments. This idea came from my experience using applications like ServiceNow as well the functionality being in use at most companies worldwide.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h3>Attributions</h3>
+<p>I used Recharts to create the chart functionality on the Dashboard page.</p>
 
-## Expanding the ESLint configuration
+<h3>Technologies Used</h3>
+<p>JavaScript, JSX, React, Express.</p>
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<h3>Next Steps</h3>
+<p>I would like to enhance this application, so that a User can create or join a company that holds company exclusive tickets. This would allow individual companies to use the app. I would also like to create a separate reporting page that contains reports specific to the users activity in the app.</p>
+
