@@ -41,7 +41,7 @@ const AllTickets = (props) => {
                 </p>
                 <p className={styles.item}>{capitalise(ticket.priority)}</p>
                 <p className={styles.item}>{capitalise(ticket.type)}</p>
-                <p className={styles.item}>{capitalise(ticket.technology)}</p>
+                <p className={styles.itemUser}>{capitalise(ticket.technology)}</p>
                 <p className={styles.itemUser}>
                   {ticket.assignedTo
                     ? `${ticket.openedBy.firstName} ${ticket.openedBy.lastName}`
