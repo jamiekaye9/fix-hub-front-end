@@ -1,210 +1,209 @@
 .title {
-    color: white;
-    font-size: 50px;
-    text-align: left;
+  color: white;
+  font-size: 50px;
+  text-align: left;
 }
 
 .subTitle {
-    color: white;
-    font-size: 40px;
-    text-align: center;
+  color: white;
+  font-size: 40px;
+  text-align: center;
 }
 
 .button {
-    background-color: #4BDFE3;
-    height: 35px;
-    width: 120px;
-    font-size: larger;
-    font-family: 'Barlow', sans-serif;
-    border-radius: 5px;
-    border: none;
-  }
+  background-color: #4bdfe3;
+  height: 35px;
+  width: 120px;
+  font-size: larger;
+  font-family: "Barlow", sans-serif;
+  border-radius: 5px;
+  border: none;
+}
 
 .commentButton {
-    background-color: #4BDFE3;
-    height: 25px;
-    width: 100px;
-    font-size: larger;
-    font-family: 'Barlow', sans-serif;
-    border-radius: 5px;
-    border: none;
+  background-color: #4bdfe3;
+  height: 25px;
+  width: 100px;
+  font-size: larger;
+  font-family: "Barlow", sans-serif;
+  border-radius: 5px;
+  border: none;
 }
 .edit {
-    background-color: white;
-    height: 35px;
-    width: 120px;
-    font-size: larger;
-    font-family: 'Barlow', sans-serif;
-    border-radius: 5px;
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #282828;  
+  background-color: white;
+  height: 35px;
+  width: 120px;
+  font-size: larger;
+  font-family: "Barlow", sans-serif;
+  border-radius: 5px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #282828;
 }
 
 .subEdit {
-    background-color: white;
-    height: 25px;
-    width: 100px;
-    font-size: larger;
-    font-family: 'Barlow', sans-serif;
-    border-radius: 5px;
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #282828;  
+  background-color: white;
+  height: 25px;
+  width: 100px;
+  font-size: larger;
+  font-family: "Barlow", sans-serif;
+  border-radius: 5px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #282828;
 }
 
 .ticketDetails {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 2rem;
-    justify-content: center;
-    margin-right: 30px;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  margin-right: 30px;
 }
 
 .ticketInfo {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    background-color: #1c1c1c;
-    color: white;
-    border: 1px solid #444;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    width: 450px;
-    min-width: 450px;
-    font-size: 20px;
-    word-break: break-word; ;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  width: 450px;
+  min-width: 450px;
+  font-size: 20px;
+  word-break: break-word;
 }
 
 .comment {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    background-color: #1c1c1c;
-    color: white;
-    border: 1px solid #444;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    width: 800px;
-    height: 120px;
-    padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  width: 800px;
+  height: 120px;
+  padding: 25px;
 }
 
 .buttonContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    margin: 25px;
-    width: 1380px;
-    margin-left: 180px;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  margin: 25px;
+  width: 1380px;
+  margin-left: 180px;
 }
 
 .buttonGroup {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .commentSection {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2rem;
-    color: white;
-    border: 1px solid #444;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    width: 900px;
-    height: 800px;
-    overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  width: 900px;
+  height: 800px;
+  overflow: scroll;
 }
 
 .commentForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    color: white;
-    width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+  width: 800px;
 }
 
 .textarea {
-    width: 800px;
-    height: 100px;
-    border-radius: 5px;
-    border: none;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    background-color: #282828;
-    border: 2px solid #4BDFE3;
-    color: white;
+  width: 800px;
+  height: 100px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  background-color: #282828;
+  border: 2px solid #4bdfe3;
+  color: white;
 }
 
 .commentContainer {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    width: 800px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 800px;
 }
 
 .commentActions {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    justify-content: right;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  justify-content: right;
+  align-items: center;
 }
 
 .statusRadar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
 }
 
 .statusBox {
-    display: flex;
-    flex-direction: column;
-    background-color: #1c1c1c;
-    color: white;
-    border: 1px solid #909090;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-    
+  display: flex;
+  flex-direction: column;
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #909090;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
 }
 
 .status {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .active {
-    background-color: #4BDFE3;
+  background-color: #4bdfe3;
 }
 
 .description {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
 .ticketDescription {
-    margin: 0;
+  margin: 0;
 }

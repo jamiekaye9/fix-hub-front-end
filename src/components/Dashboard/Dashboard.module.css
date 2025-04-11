@@ -31,20 +31,20 @@
 }
 
 .barChart {
-    background-color: #1c1c1c;
-    color: white;
-    border: 1px solid #444;
-    border-radius: 12px;
-    padding: 0.5rem;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    transition: transform 0.2s;
-    width: 670px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s;
+  width: 670px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .barContent {
   display: flex;
@@ -100,7 +100,7 @@
 }
 
 .link {
-  color: #4BDFE3;
+  color: #4bdfe3;
   text-decoration: none;
 }
 
@@ -108,7 +108,9 @@
   text-decoration: underline;
 }
 
-.item, .itemTitle, .itemTitleLink {
+.item,
+.itemTitle,
+.itemTitleLink {
   display: flex;
   width: 450px;
   align-items: center;
@@ -119,20 +121,19 @@
   width: 700px;
 }
 
-
 .itemTitleLink {
-width: 800px;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-wrap: wrap;
-text-align: center;
-word-break: break-word;
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  word-break: break-word;
 }
 
 .headerCard {
   display: flex;
-  background-color: #4BDFE3;
+  background-color: #4bdfe3;
   color: #282828;
   font-size: 20px;
   font-weight: bold;
@@ -141,7 +142,6 @@ word-break: break-word;
   border-radius: 12px;
   padding: 0.5rem;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-
 }
 
 .userCardContainer {

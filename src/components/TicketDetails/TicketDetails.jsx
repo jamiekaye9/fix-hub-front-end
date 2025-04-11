@@ -77,7 +77,9 @@ const TicketDetails = (props) => {
                 <div className={styles.ticketDetails}>
                   <section className={styles.ticketInfo}>
                     <h3 className={styles.subTitle}>Details</h3>
-                    <p className={styles.status}>Status: {(capitalise(ticket.status))}</p>
+                    <p className={styles.status}>
+                      Status: {capitalise(ticket.status)}
+                    </p>
                     <section className={styles.statusRadar}>
                       <p
                         className={`${styles.statusBox} ${
@@ -100,14 +102,14 @@ const TicketDetails = (props) => {
                         }`}
                       ></p>
                     </section>
-                    <p>Priority: {(capitalise(ticket.priority))}</p>
+                    <p>Priority: {capitalise(ticket.priority)}</p>
                     <p>
-                      Assigned to: {(capitalise(ticket.assignedTo.firstName))}{" "}
-                      {(capitalise(ticket.assignedTo.lastName))}
+                      Assigned to: {capitalise(ticket.assignedTo.firstName)}{" "}
+                      {capitalise(ticket.assignedTo.lastName)}
                     </p>
                     <p>
-                      Opened by: {(capitalise(ticket.openedBy.firstName))}{" "}
-                      {(capitalise(ticket.openedBy.lastName))}
+                      Opened by: {capitalise(ticket.openedBy.firstName)}{" "}
+                      {capitalise(ticket.openedBy.lastName)}
                     </p>
                     <p>
                       Created at:{" "}
@@ -119,7 +121,9 @@ const TicketDetails = (props) => {
                     </p>
                     <div className={styles.description}>
                       <p>Description:</p>
-                      <p className={styles.ticketDescription}>{ticket.description}</p>
+                      <p className={styles.ticketDescription}>
+                        {ticket.description}
+                      </p>
                     </div>
                   </section>
                   <section className={styles.commentSection}>
@@ -145,7 +149,7 @@ const TicketDetails = (props) => {
                                 <>
                                   <p>
                                     {comment.author.firstName}{" "}
-                                    {comment.author.lastName} - {" "}
+                                    {comment.author.lastName} -{" "}
                                     {new Date(
                                       comment.createdAt
                                     ).toLocaleDateString()}

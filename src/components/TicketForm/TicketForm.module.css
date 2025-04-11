@@ -1,11 +1,11 @@
 .signUpForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1px;
-    margin-top: 15%;
-    margin-right: 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  margin-top: 15%;
+  margin-right: 55%;
 }
 
 .formItems {
@@ -22,17 +22,18 @@
   text-align: center;
 }
 
-.input, .inputBox {
-    width: 300px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    padding-left: 10px;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    background-color: #282828;
-    border: 2px solid #4BDFE3;
-    color: white;
+.input,
+.inputBox {
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+  font-family: "Barlow", sans-serif;
+  font-size: 20px;
+  background-color: #282828;
+  border: 2px solid #4bdfe3;
+  color: white;
 }
 
 .label {
@@ -46,7 +47,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  width: 530px;  
+  width: 530px;
 }
 
 .buttonDiv {
@@ -59,16 +60,16 @@
 }
 
 .button {
-  background-color: #4BDFE3;
+  background-color: #4bdfe3;
   height: 35px;
   width: 150px;
   font-size: larger;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   border-radius: 5px;
   border: none;
 }
 
 .inputBox {
-    width: 300px;
-    height: 200px;
+  width: 300px;
+  height: 200px;
 }

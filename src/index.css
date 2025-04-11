@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
   overflow: hidden;
   background-color: #282828;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 #root {
@@ -18,10 +19,10 @@ html, body {
 
 body {
   overflow: auto;
-  /* padding-top: 50px; */
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 

@@ -91,17 +91,16 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (reportsData.length > 0) {
-      setAnimateData01([])
+      setAnimateData01([]);
       setAnimateData02([]);
 
       const timeoutId = setTimeout(() => {
         setAnimateData01(data01(reportsData));
         setAnimateData02(data02(reportsData));
-      }
-      , 100);
+      }, 500);
       return () => clearTimeout(timeoutId);
     }
-    }, [reportsData]);
+  }, [reportsData]);
 
   return (
     <div className={styles.dashboardContainer}>
@@ -182,7 +181,13 @@ const Dashboard = () => {
                   verticalAlign="bottom"
                   wrapperStyle={{ paddingTop: 20 }}
                 />
-                <Bar dataKey="value" name="Status" isAnimationActive={true} animationBegin={100} animationDuration={800}>
+                <Bar
+                  dataKey="value"
+                  name="Status"
+                  isAnimationActive={true}
+                  animationBegin={100}
+                  animationDuration={800}
+                >
                   {animateData02.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.fill} />
                   ))}
