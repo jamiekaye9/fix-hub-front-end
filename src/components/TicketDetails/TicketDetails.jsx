@@ -149,8 +149,7 @@ const TicketDetails = (props) => {
                                 <h3>{comment.text}</h3>
                               </section>
                               <section className={styles.commentActions}>
-                                {user._id === comment.author._id && (
-                                  <>
+                                  <div>
                                     <p>
                                       {comment.author.firstName}{" "}
                                       {comment.author.lastName} -{" "}
@@ -158,6 +157,9 @@ const TicketDetails = (props) => {
                                         comment.createdAt
                                       ).toLocaleDateString()}
                                     </p>
+                                  </div>
+                                {user._id === comment.author._id && (
+                                  <div>
                                     <Link
                                       className={styles.subEdit}
                                       to={`/tickets/${ticketId}/comments/${comment._id}/edit`}
@@ -172,7 +174,7 @@ const TicketDetails = (props) => {
                                     >
                                       Delete
                                     </button>
-                                  </>
+                                  </div>
                                 )}
                               </section>
                             </div>
