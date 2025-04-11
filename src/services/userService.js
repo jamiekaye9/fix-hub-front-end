@@ -9,8 +9,6 @@ const index = async () => {
     if (data.e) {
       throw new Error(data.e);
     }
-    console.log(data);
-
     return data;
   } catch (e) {
     console.log(e);

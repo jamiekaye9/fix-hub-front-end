@@ -20,16 +20,10 @@ const CommentForm = (props) => {
         commentId,
         formData
       );
-      console.log("updated comment");
-
       navigate(`/tickets/${ticketId}`);
     } else {
-      console.log("new comment");
-
       props.handleAddComment(formData);
     }
-    console.log(formData);
-
     setFormData({ text: "" });
   };
 

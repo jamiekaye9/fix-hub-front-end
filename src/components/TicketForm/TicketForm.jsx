@@ -41,14 +41,12 @@ const TicketForm = (props) => {
   useEffect(() => {
     const fetchUsers = async () => {
       const allUsers = await userService.index();
-      console.log("allusers", allUsers);
       const serviceDesk = allUsers.filter(
         (user) => user.role === "serviceDesk"
       );
       setServiceDesk(serviceDesk);
     };
     fetchUsers();
-    console.log(serviceDesk);
   }, []);
 
   const handleChange = (e) => {

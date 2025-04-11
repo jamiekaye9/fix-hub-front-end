@@ -22,7 +22,6 @@ const App = () => {
   const navigate = useNavigate();
   const handleAddTicket = async (ticketFormData) => {
     const newTicket = await ticketService.create(ticketFormData);
-
     setTickets([newTicket, ...tickets]);
     navigate("/tickets");
   };
