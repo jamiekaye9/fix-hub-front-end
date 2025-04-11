@@ -4,6 +4,13 @@
   text-align: center;
 }
 
+.message {
+  color: #4bdfe3;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 100px;
+}
+
 .cardGrid {
   display: flex;
   flex-direction: column;
@@ -53,14 +60,14 @@
   justify-content: center;
 }
 
-.itemNumber, 
+.itemNumber,
 .itemNumberLink {
   width: 100px;
   margin-right: 10px;
 }
 
 .itemTitle {
-  width:600px;
+  width: 600px;
   white-space: normal;
   word-break: break-word;
   overflow-wrap: break-word;
@@ -73,7 +80,6 @@
   overflow-wrap: break-word;
   text-align: center;
 }
-
 
 .headerCard {
   display: flex;

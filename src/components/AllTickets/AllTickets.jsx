@@ -12,7 +12,7 @@ const AllTickets = (props) => {
     <main>
       <h1 className={styles.title}>All Tickets</h1>
       {ticketsArray === 0 ? (
-        <p>No tickets available</p>
+        <p className={styles.message}>No Tickets Created</p>
       ) : (
         <div className={styles.cardGrid}>
           <div className={styles.headerCard}>

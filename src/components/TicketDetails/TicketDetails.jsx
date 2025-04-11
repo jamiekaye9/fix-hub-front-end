@@ -55,7 +55,9 @@ const TicketDetails = (props) => {
             {ticketId && (
               <div>
                 <section className={styles.buttonContainer}>
-                  <h2 className={styles.title}>{ticket.number} - {ticket.title}</h2>
+                  <h2 className={styles.title}>
+                    {ticket.number} - {ticket.title}
+                  </h2>
                   {(user._id === ticket.openedBy._id ||
                     user._id === ticket.assignedTo._id) && (
                     <div className={styles.buttonGroup}>
@@ -136,43 +138,48 @@ const TicketDetails = (props) => {
                     ) : (
                       <div>
                         {ticket.comments.length === 0 && <p>No comments yet</p>}
-                        {ticket.comments.map((comment) => (
-                          <div
-                            key={comment._id}
-                            className={styles.commentContainer}
-                          >
-                            <section className={styles.comment}>
-                              <h3>{comment.text}</h3>
-                            </section>
-                            <section className={styles.commentActions}>
-                              {user._id === comment.author._id && (
-                                <>
-                                  <p>
-                                    {comment.author.firstName}{" "}
-                                    {comment.author.lastName} -{" "}
-                                    {new Date(
-                                      comment.createdAt
-                                    ).toLocaleDateString()}
-                                  </p>
-                                  <Link
-                                    className={styles.subEdit}
-                                    to={`/tickets/${ticketId}/comments/${comment._id}/edit`}
-                                  >
-                                    Edit
-                                  </Link>
-                                  <button
-                                    onClick={() =>
-                                      handleDeleteComment(comment._id)
-                                    }
-                                    className={styles.commentButton}
-                                  >
-                                    Delete
-                                  </button>
-                                </>
-                              )}
-                            </section>
-                          </div>
-                        ))}
+                        {[...ticket.comments]
+                          .sort(
+                            (a, b) =>
+                              new Date(b.createdAt) - new Date(a.createdAt)
+                          )
+                          .map((comment) => (
+                            <div
+                              key={comment._id}
+                              className={styles.commentContainer}
+                            >
+                              <section className={styles.comment}>
+                                <h3>{comment.text}</h3>
+                              </section>
+                              <section className={styles.commentActions}>
+                                {user._id === comment.author._id && (
+                                  <>
+                                    <p>
+                                      {comment.author.firstName}{" "}
+                                      {comment.author.lastName} -{" "}
+                                      {new Date(
+                                        comment.createdAt
+                                      ).toLocaleDateString()}
+                                    </p>
+                                    <Link
+                                      className={styles.subEdit}
+                                      to={`/tickets/${ticketId}/comments/${comment._id}/edit`}
+                                    >
+                                      Edit
+                                    </Link>
+                                    <button
+                                      onClick={() =>
+                                        handleDeleteComment(comment._id)
+                                      }
+                                      className={styles.commentButton}
+                                    >
+                                      Delete
+                                    </button>
+                                  </>
+                                )}
+                              </section>
+                            </div>
+                          ))}
                       </div>
                     )}
                   </section>

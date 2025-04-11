@@ -17,7 +17,7 @@ const MyRequests = (props) => {
     <main>
       <h1 className={styles.title}>My Requests</h1>
       {requests.length === 0 ? (
-        <p>No requests available</p>
+        <p className={styles.message}>No Tickets Requests</p>
       ) : (
         <div className={styles.cardGrid}>
           <div className={styles.headerCard}>

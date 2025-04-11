@@ -46,6 +46,7 @@ const CommentForm = (props) => {
 
   return (
     <form className={styles.commentForm} onSubmit={handleSubmit}>
+      {commentId && <h2 className={styles.title}>Edit Comment</h2>}
       <div>
         <textarea
           type="text"

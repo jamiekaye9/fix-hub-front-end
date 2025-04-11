@@ -17,7 +17,7 @@ const TicketsAssigned = (props) => {
     <main>
       <h1 className={styles.title}>Tickets Assigned</h1>
       {assignedTickets.length === 0 ? (
-        <p>No tickets assigned</p>
+        <p className={styles.message}>No Tickets Assigned</p>
       ) : (
         <div className={styles.cardGrid}>
           <div className={styles.headerCard}>

@@ -1,10 +1,12 @@
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
+import { UserContext } from "../../contexts/UserContext";
 import * as ticketService from "../../services/ticketService";
 import styles from "./TicketForm.module.css";
 import * as userService from "../../services/userService";
 
 const TicketForm = (props) => {
+  const { user } = useContext(UserContext);
   const { ticketId } = useParams();
   const [formData, setFormData] = useState({
     title: "",
@@ -158,27 +160,29 @@ const TicketForm = (props) => {
                 <option value="closed">Closed</option>
               </select>
             </div>
-            <div className={styles.div}>
-              <label htmlFor="assignedTo" className={styles.label}>
-                Assigned To
-              </label>
-              <select
-                name="assignedTo"
-                id="assignedTo"
-                value={formData.assignedTo}
-                onChange={handleChange}
-                required
-                className={styles.input}
-              >
-                {serviceDesk.map((user) => {
-                  return (
-                    <option key={user._id} value={user._id}>
-                      {user.firstName} {user.lastName}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
+            {user._id === formData.assignedTo && (
+              <div className={styles.div}>
+                <label htmlFor="assignedTo" className={styles.label}>
+                  Assigned To
+                </label>
+                <select
+                  name="assignedTo"
+                  id="assignedTo"
+                  value={formData.assignedTo}
+                  onChange={handleChange}
+                  required
+                  className={styles.input}
+                >
+                  {serviceDesk.map((user) => {
+                    return (
+                      <option key={user._id} value={user._id}>
+                        {user.firstName} {user.lastName}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+            )}
           </>
         )}
         <div className={styles.div}>

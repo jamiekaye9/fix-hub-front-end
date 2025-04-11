@@ -54,14 +54,6 @@ const App = () => {
     navigate(`/tickets/${ticketId}`);
   };
 
-  // const handleUpdateTicket = async (ticketId, ticketFormData) => {
-  //   const updatedTicket = await ticketService.updateTicket(ticketId, ticketFormData);
-  //   // setTickets(updatedTicket)
-  //   setTickets(tickets.map((ticket) => ticket._id === ticketId ? updatedTicket : ticket));
-  //   navigate(`/tickets/${ticketId}`);
-
-  // }
-
   return (
     <main className="app">
       <NavBar />
