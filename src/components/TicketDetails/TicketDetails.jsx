@@ -145,7 +145,7 @@ const TicketDetails = (props) => {
                                 <>
                                   <p>
                                     {comment.author.firstName}{" "}
-                                    {comment.author.lastName} -{" "}
+                                    {comment.author.lastName} - {" "}
                                     {new Date(
                                       comment.createdAt
                                     ).toLocaleDateString()}

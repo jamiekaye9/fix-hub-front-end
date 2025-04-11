@@ -9,6 +9,10 @@ const TicketsAssigned = (props) => {
         ticket => ticket.assignedTo?._id === user._id
     );
     const capitalise = (word) => word?.charAt(0).toUpperCase() + word?.slice(1);
+    const splitCamelCase = (str) => {
+        if (typeof str !== "string") return "";
+        return str.replace(/([a-z0-9])([A-Z])/g, "$1 $2");
+      };
     return (
         <main>
                 <h1 className={styles.title}>Tickets Assigned</h1>
@@ -35,7 +39,7 @@ const TicketsAssigned = (props) => {
                                         {ticket.title}
                                     </Link>
                                 </h2>
-                                <p className={styles.item}>{(capitalise(ticket.status))}</p>
+                                <p className={styles.item}>{(splitCamelCase(capitalise(ticket.status)))}</p>
                                 <p className={styles.item}>{(capitalise(ticket.priority))}</p>
                                 <p className={styles.item}>{(capitalise(ticket.type))}</p>
                                 <p className={styles.item}>{(capitalise(ticket.technology))}</p>

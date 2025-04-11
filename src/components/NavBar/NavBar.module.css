@@ -56,3 +56,19 @@
     text-decoration: none;
     font-size: 30px;
 }
+
+.username {
+    margin-top: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    border-top: 2px solid #4BDFE3;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px 10px 10px;
+    word-break: break-word;
+}

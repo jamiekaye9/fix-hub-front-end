@@ -60,6 +60,9 @@ const NavBar = () => {
                 Sign Out
               </Link>
             </li>
+            <li className={styles.username}>
+              {user.firstName} {user.lastName}
+            </li>
           </ul>
         </section>
       ) : (
