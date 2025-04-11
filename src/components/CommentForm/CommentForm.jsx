@@ -53,7 +53,7 @@ const CommentForm = (props) => {
         />
       </div>
       <div>
-        <button className={styles.button} type="submit">
+        <button className={styles.buttonCommentForm} type="submit">
           Submit
         </button>
       </div>
