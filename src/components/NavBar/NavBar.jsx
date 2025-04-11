@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router";
 import { UserContext } from "../../contexts/UserContext";
 import styles from "./NavBar.module.css";
+import logo from "../../assets/Images/fix-hub-logo.png";
 
 const NavBar = () => {
   const { user, setUser } = useContext(UserContext);
@@ -17,7 +18,7 @@ const NavBar = () => {
         <section className={styles.navbarContainer}>
           <img
             className="small-logo"
-            src="/Images/fix-hub-logo.png"
+            src={logo}
             alt="Fix Hub Logo"
           />
           <ul className={styles.navbarIn}>
