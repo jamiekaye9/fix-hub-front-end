@@ -17,12 +17,17 @@ const TicketForm = (props) => {
     status: "",
     assignedTo: "",
   });
+  const [currentFormData, setCurrentFormData] = useState({})
   const [serviceDesk, setServiceDesk] = useState([]);
 
   useEffect(() => {
     const fetchTicket = async () => {
       const ticketData = await ticketService.show(ticketId);
       setFormData({
+        ...ticketData,
+        assignedTo: ticketData.assignedTo?._id || ticketData.assignedTo || "",
+      });
+      setCurrentFormData({
         ...ticketData,
         assignedTo: ticketData.assignedTo?._id || ticketData.assignedTo || "",
       });
@@ -158,7 +163,7 @@ const TicketForm = (props) => {
                 <option value="closed">Closed</option>
               </select>
             </div>
-            {user._id === formData.assignedTo && (
+            {user._id === currentFormData.assignedTo && (
               <div className={styles.div}>
                 <label htmlFor="assignedTo" className={styles.label}>
                   Assigned To

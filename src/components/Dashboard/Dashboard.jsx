@@ -54,7 +54,7 @@ const Dashboard = () => {
       {
         name: "Medium",
         value: filtered.filter((ticket) => ticket.priority === "medium").length,
-        fill: "#707070",
+        fill: "#B4C6EE",
       },
       {
         name: "High",
@@ -74,7 +74,7 @@ const Dashboard = () => {
       {
         name: "In Progress",
         value: tickets.filter((t) => t.status === "inProgress").length,
-        fill: "#707070",
+        fill: "#B5F2EB",
       },
       {
         name: "Resolved",
@@ -84,7 +84,7 @@ const Dashboard = () => {
       {
         name: "Closed",
         value: tickets.filter((t) => t.status === "closed").length,
-        fill: "#2a7e81",
+        fill: "#B4C6EE",
       },
     ];
   };
