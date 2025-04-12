@@ -7,6 +7,10 @@ import styles from "./TicketDetails.module.css";
 
 const TicketDetails = (props) => {
   const capitalise = (word) => word?.charAt(0).toUpperCase() + word?.slice(1);
+  const splitCamelCase = (str) => {
+    if (typeof str !== "string") return "";
+    return str.replace(/([a-z0-9])([A-Z])/g, "$1 $2");
+  };
   const { ticketId } = useParams();
   const { user } = useContext(UserContext);
   const [ticket, setTicket] = useState(null);
@@ -77,7 +81,7 @@ const TicketDetails = (props) => {
                   <section className={styles.ticketInfo}>
                     <h3 className={styles.subTitle}>Details</h3>
                     <p className={styles.status}>
-                      Status: {capitalise(ticket.status)}
+                      Status: {splitCamelCase(capitalise(ticket.status))}
                     </p>
                     <section className={styles.statusRadar}>
                       <p
