@@ -7,7 +7,7 @@ This is an IT ticketing application, giving users the functionality to create, r
 ### Links
 [Back End Repo](https://github.com/jamiekaye9/fix-hub-back-end)
 [Planning Documents](https://trello.com/invite/b/67f91687bcd79b3137051789/ATTI296a2474f2f8b7b7e2c65976c1a2dd7571F6699D/fix-hub)
-Deployed App
+[Deployed App](https://fix-hub.netlify.app/)
 
 ### Attributions
 I used Recharts to create the chart functionality on the Dashboard page.
