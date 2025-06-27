@@ -55,10 +55,6 @@ JavaScript, JSX, React, Express, MongoDB, JWT and Bcrypt.
 To plan this project, I created User Stories, Sretch User Stories, an ERD, Wireframes and a RESTful Routing table. This can all be found in the Trello Link below.
 
 [Planning Documents](https://trello.com/invite/b/67f91687bcd79b3137051789/ATTI296a2474f2f8b7b7e2c65976c1a2dd7571F6699D/fix-hub)
-<<<<<<< HEAD
-=======
-[Deployed App](https://fix-hub.netlify.app/)
->>>>>>> 5778b7889459a783b1c91893e76490cfdb2f3271
 
 ## Build/Code Process
 
@@ -105,7 +101,3 @@ I also added a legend that matches the colours of the bars, helping users see wh
 
 ### Next Steps
 I would like to enhance this application, so that a User can create or join a company that holds company exclusive tickets. This would allow individual companies to use the app. I would also like to create a separate reporting page that contains reports specific to the user's activity in the app.
-<<<<<<< HEAD
-
-=======
->>>>>>> 5778b7889459a783b1c91893e76490cfdb2f3271
