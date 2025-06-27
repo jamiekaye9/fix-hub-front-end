@@ -101,3 +101,4 @@ I also added a legend that matches the colours of the bars, helping users see wh
 
 ### Next Steps
 I would like to enhance this application, so that a User can create or join a company that holds company exclusive tickets. This would allow individual companies to use the app. I would also like to create a separate reporting page that contains reports specific to the user's activity in the app.
+
