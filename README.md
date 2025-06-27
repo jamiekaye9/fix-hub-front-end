@@ -92,12 +92,24 @@ I also added a legend that matches the colours of the bars, helping users see wh
 
 ## Challenges
 
+This was my first project using React, which brought its own set of challenges as I adapted to a new syntax. One area I initially struggled with was using ternary operators. While they offer a concise way to write conditional logic and integrate neatly into JSX, I sometimes found my code harder to read—especially when too much was packed between the brackets. With practice, though, I became more comfortable, and ternary operators are now a tool I’ll confidently use in future projects. This experience reinforced for me how important repetition and resilience are when learning something new. It’s easy to rely on familiar concepts, but growth comes from stepping outside your comfort zone.
 
+Adding animations to the dashboard charts was a learning curve. I started with empty data and introduced a short delay before updating the chart data, which allowed Recharts’ built-in animations to run smoothly. The challenge was getting the timing right to avoid flickering or extra re-renders. This process helped me better understand React's 'use state', and how it can be a solution to variety of problems.
 
 ## Key Learnings/Takeaways
 
+I found this to be my most intriguing project so far. I explored many concepts beyond my course syllabus, which, on reflection, shows how much more confident I’ve become in my abilities as a developer.
+
+I found this to be my most intriuging project to date. I introduced many different concepts outside of my course syllabus, which after self reflexation, shows a growth in confidence of my capabilities.
+
+Key Learnings:
+- There are countless React and Express libraries available that can greatly enhance an application’s functionality and user experience — it’s just a matter of exploring and choosing the right tools.
+- I gained a solid understanding of JWT (JSON Web Tokens) and why they’re important for securely handling authentication and protecting routes in web applications.
+- I learned how to work with HTTP responses, including how to handle status codes effectively to build more robust API interactions.
+- I saw firsthand how different languages and frameworks are suited to different tasks — for example, React excels at building dynamic frontends, while Express is a great choice for handling backend logic and routing.
+
 ## Future Improvements
 
+With more time, I would have made the application fully responsive by using CSS media queries to adapt it to different screen sizes. As I mentioned earlier, this site was inspired by ServiceNow, and I’d like to explore adding a key feature: performance reports. This would include reporting on ticket completion rates, time between ticket creation and closure, and other useful metrics. To achieve this, I would design additional models or extend the existing ticket model to store timestamps and calculate performance data dynamically.
 
-### Next Steps
-I would like to enhance this application, so that a User can create or join a company that holds company exclusive tickets. This would allow individual companies to use the app. I would also like to create a separate reporting page that contains reports specific to the user's activity in the app.
+Lastly, I’d like to introduce a company model that links to the user model, so users can only perform CRUD operations for their own company’s data. This would make the application ready for practical, real-world use.
