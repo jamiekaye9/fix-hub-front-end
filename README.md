@@ -15,22 +15,28 @@ Having worked extensively with ServiceNow as a Business Analyst, I’m familiar 
 
 ## Getting Started/Code Installation
 
-1. Create a local 'Fix-Hub' folder.
-2. Inside that folder, clone both the front-end and back-end Github repositorties.
+1. Create a local Fix-Hub folder.
+2. Inside that folder, clone both the front-end and back-end GitHub repositories:
   - git clone https://github.com/jamiekaye9/fix-hub-front-end
   - git clone https://github.com/jamiekaye9/fix-hub-back-end
-3. Navigate inside of the fix-hub-front-end folder.
+3. Navigate into the fix-hub-front-end folder:
+  - cd fix-hub-front-end
 4. Create a .env file containing:
   - VITE_BACK_END_SERVER_URL=http://localhost:3000
-5. Run npm install in the terminal.
-6. Run npm run dev in the terminal.
-7. In a seperate terminal window, navigate into the fix-hub-back-end folder.
+5. Install front-end dependencies:
+  - npm install
+6. Start the front-end server:
+  - npm run dev
+7. In a separate terminal window, navigate into the fix-hub-back-end folder:
+  - cd ../fix-hub-back-end
 8. Create a .env file containing:
-  - MONGODB_URI= (your MongoDB token)
-  - JWT_SECRET= (a secret code of your choosing)
+  - MONGODB_URI=your_mongodb_token
+  - JWT_SECRET=your_secret
   - FRONTEND_URL=http://localhost:5173
-9. Run npm install in your terminal.
-10. Run npm run dev in your terminal.
+9. Install back-end dependencies:
+  - npm install
+10. Start the back-end server:
+  - npm run dev
 
 ## Timeframe & Working Team
 
@@ -42,17 +48,17 @@ JavaScript, JSX, React, Express, MongoDB, JWT and Bcrypt.
 
 ## Brief
 
-- Build a full stack application with an Express and Node back-end and a React front=end.
+- Build a full stack application with an Express and Node back-end and a React front-end.
 - Use MongoDB as your database management system.
 - Implement JWT token-based authentication to sign up, sign in and sign out users.
 - Guest users should not be able to create, update or delete data.
 - The project must have at least two data entities in addition to the User model. At least one entity must have a relationship with the User model.
 - The project must have full CRUD functionality on both the back-end and front-end.
-- The app much utilise CSS flexbox.
+- The app must utilise CSS flexbox.
 
 ## Planning
 
-To plan this project, I created User Stories, Sretch User Stories, an ERD, Wireframes and a RESTful Routing table. This can all be found in the Trello Link below.
+To plan this project, I created User Stories, Stretch User Stories, an ERD, Wireframes and a RESTful Routing table. This can all be found in the Trello Link below.
 
 [Planning Documents](https://trello.com/invite/b/67f91687bcd79b3137051789/ATTI296a2474f2f8b7b7e2c65976c1a2dd7571F6699D/fix-hub)
 
@@ -100,7 +106,7 @@ Adding animations to the dashboard charts was a learning curve. I started with e
 
 I found this to be my most intriguing project so far. I explored many concepts beyond my course syllabus, which, on reflection, shows how much more confident I’ve become in my abilities as a developer.
 
-I found this to be my most intriuging project to date. I introduced many different concepts outside of my course syllabus, which after self reflexation, shows a growth in confidence of my capabilities.
+I found this to be my most intriguing project to date. I introduced many different concepts outside of my course syllabus, which after self reflection, shows a growth in confidence of my capabilities.
 
 Key Learnings:
 - There are countless React and Express libraries available that can greatly enhance an application’s functionality and user experience — it’s just a matter of exploring and choosing the right tools.
